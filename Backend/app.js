@@ -1,12 +1,17 @@
 const express = require('express')
 const app = express()
-const port = 3000
+const port = 8000
 const mongoose = require('mongoose')
+app.use(express.json())
 
 
 mongoose.connect('mongodb://localhost:27017/BlogApi').then(() => {
     console.log("hello world");
 })
+
+
+
+app.use('/',require('./Routes/user.api'))
 
 
 
