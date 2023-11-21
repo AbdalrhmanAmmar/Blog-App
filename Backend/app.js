@@ -11,7 +11,8 @@ mongoose.connect('mongodb://localhost:27017/BlogApi').then(() => {
 
 
 
-app.use('/',require('./Routes/user.api'))
+app.use('/', require('./Routes/user.api'))
+app.use('/', require('./Routes/news.api'))
 
 
 

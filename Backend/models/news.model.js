@@ -9,4 +9,6 @@ const Schemanotes = mongoose.Schema({
     timestamps:true
 })
 
-module.exports = mongoose.model('note', Schemanotes);
+const NewsModel = mongoose.model('new', Schemanotes);
+   module.exports = NewsModel
+
