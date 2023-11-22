@@ -3,7 +3,10 @@ const mongoose = require('mongoose')
 const Schemanotes = mongoose.Schema({
     title: String,
     desc: String,
-    createdby: mongoose.SchemaTypes.ObjectId,
+    createdby: {
+        type: mongoose.SchemaTypes.ObjectId,
+        ref: 'user'
+    }
     
 }, {
     timestamps:true

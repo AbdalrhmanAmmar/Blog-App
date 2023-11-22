@@ -8,3 +8,9 @@ module.exports.Addnews = async (req, res) => {
 
     
 }
+
+module.exports.getnews = async (req, res) => {
+    const news = await NewsModel.find({}).populate('createdby',)
+
+    res.json({news})
+}
