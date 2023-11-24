@@ -32,7 +32,7 @@ module.exports.Login = async (req, res) => {
     if (user) {
         const match = await bcrypt.compare(password, user.password)
         if (match) {
-            var token = jwt.sign({ userid:user._id }, 'shhhhh');
+            var token = jwt.sign({ userid:user._id }, 'holmes');
 
             res.json({token})
         } else {
