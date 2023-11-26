@@ -1,23 +1,13 @@
 const NewsModel = require('../models/news.model')
-const jwt = require('jsonwebtoken');
 
 module.exports.Addnews = async (req, res) => {
 
-    const { title, desc, createdby,token } = req.body;
+    const { title, desc, createdby } = req.body;
 
-    jwt.verify(token,'holmes',async function (err, decoded) {
-        
-        if (err) {
-            res.json(err);
-        } else {
-            console.log(decoded.foo) // bar
-              await NewsModel.insertMany({ title, desc, createdby })
+
+
+                  await NewsModel.insertMany({ title, desc, createdby })
     res.json({message:'success'})
-
-            
-        }
-})
-
 
 
   
